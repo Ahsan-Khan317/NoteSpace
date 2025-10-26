@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'DarkModeFont';
+  src: url('./assets/fonts/DarkmodeRegular-X35Oo.ttf') format('truetype');
+  font-weight: 400; /* normal weight */
+  font-style: normal;
+}
+.font-darkmode {
+  font-family: 'DarkModeFont', sans-serif;
+}
