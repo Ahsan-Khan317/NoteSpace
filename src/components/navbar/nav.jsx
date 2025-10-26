@@ -23,7 +23,7 @@ function Nav(){
       </div>
       
   <Linking />
- <span className={`rotate-270 absolute bottom-56 text-7xl sm:text-6xl sm:bottom-52 tracking-wider font-darkmode ${navmenu?"opacity-100":"opacity-0"} `}>Note<span className={` bg-gradient-to-r from-blue-300 to-red-700 bg-clip-text text-transparent`}>Sphere</span></span>
+ <span className={`rotate-270 absolute bottom-56 text-7xl sm:text-6xl sm:bottom-52 cursor-pointer tracking-wider font-darkmode ${navmenu?"opacity-100":"opacity-0"} `}>Note<span className={` bg-gradient-to-r from-blue-300 to-red-700 bg-clip-text text-transparent`}>Sphere</span></span>
 
 
       <Profile />
