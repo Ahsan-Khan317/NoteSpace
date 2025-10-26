@@ -7,10 +7,10 @@ function Contextdata(props){
 
 
     //states
-  const [navmenu,setnavmenu] = useState(false)
+  
+const iswidth = typeof window !== "undefined" && window.innerWidth < 768;
 
-
-
+const [navmenu,setnavmenu] = useState(iswidth?true:false)
 
 
 //functions 
