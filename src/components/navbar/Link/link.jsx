@@ -19,7 +19,9 @@ function Linking() {
 
 {linkdata.map((e,idx)=>(
 <NavLink key={idx} to = {e.to}
- className={({isActive})=>(`flex items-center transition duration-200 ease-out gap-2 p-2 rounded hover:bg-gray-200    ${isActive? "bg-blue-500 text-white": "hover:bg-gray-200 text-gray-800" }`)}>
+ className={({isActive})=>(`flex items-center transition duration-200
+  ease-out gap-2 p-2 rounded hover:bg-gray-400   
+   ${isActive? "bg-gray-900 text-white": null }`)}>
 
 {e.icon}  {!navmenu && <span>{e.label}</span>}
 </NavLink>

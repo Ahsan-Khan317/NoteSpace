@@ -15,20 +15,22 @@ function App() {
 
 
   return (
-<div className='flex not-sm:pl-[86.5px] pl-[110px] '>
-<Nav />
-<div  className='flex-1'>
-  <Routes>
- <Route path="/" element={<Home />} />
-          <Route path="/mynotes" element={<Mynotes />} />
-          <Route path="/createnotes" element={<Createnote />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/help" element={<Help />} />
+<div className="flex h-screen overflow-hidden">
+  {/* Sidebar */}
+  <Nav />
 
-</Routes>
+  {/* Main content area */}
+  <main className="flex-1 overflow-y-auto pl-[110px] not-sm:pl-[86.5px] bg-gray-900">
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/mynotes" element={<Mynotes />} />
+      <Route path="/createnotes" element={<Createnote />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/help" element={<Help />} />
+    </Routes>
+  </main>
 </div>
 
-</div>
 
   )
 }

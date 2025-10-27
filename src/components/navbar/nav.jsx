@@ -10,8 +10,8 @@ function Nav(){
     return(
 
 
-     <aside className={`h-screen shadow-2xl shadow-gray-700  bg-red-200 fixed left-0 flex flex-col  max-w-72 p-3 not-sm:py-3 not-sm:px-0 
-     w-fit transition-all ease-in-out duration-1000 ${navmenu?"items-center":null} `}> 
+     <aside className={`h-screen shadow-xl  shadow-gray-700  bg-gradient-to-tr from-red-300 to-pink-200 fixed left-0 z-50 flex flex-col  max-w-72 p-3 not-sm:py-3 not-sm:px-0 
+     w-fit transition-all ease-in-out duration-1000 overflow-y-hidden ${navmenu?"items-center":null} `}> 
 
 <div className="flex justify-center   items-center w-fit gap-3 ">
 <img src={Logo} alt="logo" className={` w-52 h-auto ${navmenu?"hidden":"inline"}`} />

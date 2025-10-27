@@ -9,3 +9,24 @@
 .font-darkmode {
   font-family: 'DarkModeFont', sans-serif;
 }
+html,body{
+  background-color:"blue";
+  /* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 3px;                /* width of scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;    /* background of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c75b6d;  /* pink/red thumb color */
+  border-radius: 10px;        /* rounded scrollbar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #c75b6d;  /* lighter shade on hover */
+}
+
+}
