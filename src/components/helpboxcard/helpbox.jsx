@@ -1,6 +1,6 @@
 import { ChevronDown, ChevronUp } from "lucide-react"
 import { useContext } from "react"
-import { Contexts } from "../contextdata/contextdata"
+import { Contexts } from "../../contextdata/contextdata"
 
 function Helpbox({text="Getting started" , idx,content,detail,help} ){
 

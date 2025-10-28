@@ -27,6 +27,7 @@ function App() {
       <Route path="/createnotes" element={<Createnote />} />
       <Route path="/about" element={<About />} />
       <Route path="/help" element={<Help />} />
+       <Route path="/:id" element={<Home />} />
     </Routes>
   </main>
 </div>

@@ -16,7 +16,7 @@ function Nav(){
 <div className="flex justify-center   items-center w-fit gap-3 ">
 <img src={Logo} alt="logo" className={` w-52 h-auto ${navmenu?"hidden":"inline"}`} />
 <button  onClick={controlnav} className=" cursor-pointer active:scale-90 " >
-  {(navmenu)? <TextAlignEnd /> : <TextAlignStart />}
+  {(navmenu)? <TextAlignEnd  /> : <TextAlignStart />}
 </button>
 
 

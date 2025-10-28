@@ -6,8 +6,18 @@
   font-weight: 400; /* normal weight */
   font-style: normal;
 }
+@font-face {
+  font-family: 'GrinchedFont';
+  src: url('./assets/fonts/GrinchedRegular.otf') format('truetype');
+  font-weight: 600; /* normal weight */
+  font-style: normal;
+}
+
 .font-darkmode {
   font-family: 'DarkModeFont', sans-serif;
+}
+.font-Grinched {
+  font-family: 'GrinchedFont', sans-serif;
 }
 html,body{
   background-color:"blue";

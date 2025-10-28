@@ -1,8 +1,8 @@
 
-import { createContext, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 
 export const Contexts = createContext()
-
+import { useNavigate } from "react-router-dom"
 function Contextdata(props){
 //array for mappping in popular topics of help
 
@@ -86,12 +86,29 @@ const controlnav =()=>{
     )};
 
 
-//refs
+    //for giving command on width
+    const [iswidth,setiswidth]=useState(
+    typeof window !=="undefined" && window.innerWidth <768
+    )
+  
+    useEffect(()=>{
+    const handlewidth =()=>{setiswidth(window.innerWidth); }
+    handlewidth();
+         window.addEventListener("resize",handlewidth);
+      return window.removeEventListener("resize",handlewidth)
 
+    },[])
+    
 
+//navigate
+
+ const navigate = useNavigate()
+    const createnotes =()=>{
+        navigate("/createnotes")
+    }
 
     return(
-<Contexts.Provider value={{navmenu,setnavmenu,controlnav,helpdetail,sethelpdetail,controlhelp,article,faqdata,faqdetail,faqdetail,controlfaq}}>
+<Contexts.Provider value={{navmenu,setnavmenu,controlnav,helpdetail,sethelpdetail,controlhelp,article,faqdata,faqdetail,faqdetail,controlfaq,iswidth,createnotes}}>
     {props.children}
 </Contexts.Provider>
 

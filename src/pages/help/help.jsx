@@ -1,7 +1,7 @@
 
 import { useContext } from "react"
-import Heading  from "../../components/heading"
-import Helpbox from "../../components/helpbox.jsx"
+import Heading  from "../../components/helpboxcard/heading.jsx"
+import Helpbox from "../../components/helpboxcard/helpbox.jsx"
 import { Contexts } from "../../contextdata/contextdata.jsx"
 
 function Help(){
