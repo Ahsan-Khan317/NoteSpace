@@ -1,7 +1,7 @@
 import Title from "../../components/homepageused/title.jsx"
 import Para from "../../components/homepageused/para.jsx"
 import Click from "../../components/homepageused/click.jsx"
-import notebook from "../../assets/notebook.png"
+import notes from "../../assets/notes.png"
 import { useContext } from "react"
 import { Contexts } from "../../contextdata/contextdata.jsx"
 
@@ -15,8 +15,8 @@ function Home(){
 <Para />
 <Click clicked={createnotes} />
          </div>
-         <div className={` flex-1 ${!iswidth?"flex":"hidden"} `} >
-            <img src={notebook} alt="" />
+         <div className={` flex-1 ${iswidth?"hidden":"flex"} justify-center items-center `} >
+            <img src={notes} alt=""/>
          </div>
               
 

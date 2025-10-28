@@ -91,13 +91,18 @@ const controlnav =()=>{
     typeof window !=="undefined" && window.innerWidth <768
     )
   
-    useEffect(()=>{
-    const handlewidth =()=>{setiswidth(window.innerWidth); }
-    handlewidth();
-         window.addEventListener("resize",handlewidth);
-      return window.removeEventListener("resize",handlewidth)
+    useEffect(() => {
+  const handleWidth = () => {
+    setiswidth(window.innerWidth < 768);
+  };
 
-    },[])
+  handleWidth(); // check once on mount
+
+  window.addEventListener("resize", handleWidth);
+
+  return () => window.removeEventListener("resize", handleWidth);
+}, []);
+
     
 
 //navigate

@@ -1,6 +1,6 @@
 function Title({properties="not-sm:text-7xl  "}){
 return(
-    <div className="relative flex flex-1   ">
+    <div className="relative flex flex-1  ">
         <span className={`absolute font-Grinched ${properties} not-sm:left-0 text-9xl tracking-wider top-3 left-24 text-white  `}>Organize</span>
         <span className={`absolute  font-Grinched ${properties} text-9xl top-32 not-sm:top-16 left-20  text-white -rotate-6  `}>your</span>
         <span className={`absolute  font-Grinched ${properties} not-sm:left-1 not-sm:-rotate-12 not-sm:top-28 text-8xl top-40 left-64  text-white rotate-[30px]`}>Thoughts</span>
