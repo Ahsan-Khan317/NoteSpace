@@ -1,6 +1,14 @@
+
+import Createpage from "../../components/createpagecomponent/createcmp.jsx"
+
 function Createnote(){
+   
     return(
-          <div className="text-center bg-green-200 h-screen w-full"><h1>Create notes page</h1></div>
+        
+        
+              <Createpage   />
+      
+        
     )
 }
 export default Createnote

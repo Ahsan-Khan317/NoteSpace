@@ -1,11 +1,11 @@
 
-import { createContext, useEffect, useState } from "react"
+import { createContext, useEffect, useRef, useState } from "react"
 
 export const Contexts = createContext()
 import { useNavigate } from "react-router-dom"
 function Contextdata(props){
 //array for mappping in popular topics of help
-
+  
     const article = [
   {
     title: "Getting Started",
@@ -112,8 +112,84 @@ const controlnav =()=>{
         navigate("/createnotes")
     }
 
+
+
+
+//ref
+
+const titleref= useRef(null)
+const noteref= useRef(null)
+const tagref= useRef(null)
+const bgColors = [
+  "bg-yellow-200",
+  "bg-green-200",
+  "bg-blue-200",
+  "bg-rose-200",
+  "bg-orange-200",
+  "bg-teal-200",
+  "bg-indigo-200",
+  "bg-lime-200",
+  "bg-pink-200",
+  "bg-cyan-200",
+];
+const bg = useRef(0);
+const bgfunction =()=>{
+
+const color = bgColors[bg.current];
+  bg.current++;
+  if(bg.current==bgColors.length-1){
+    bg.current=0
+  
+  }  
+    return color
+}
+
+const cnclhandler=()=>{
+  titleref.current.value="";
+    noteref.current.value="";
+      tagref.current.value="";
+}
+
+const today = new Date()
+  .toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" })
+  .replace(/ /g, "-");
+
+const [data,setdata] =useState(()=>{
+   const store = JSON.parse(localStorage.getItem("key"))
+  return store?store:[]
+}
+)
+useEffect(()=>{
+  localStorage.setItem("key",JSON.stringify(data))
+},[data])
+
+ const mynotenav = useNavigate();
+const savehandler =()=>{
+if(titleref.current.value =="" || noteref.current.value =="" || tagref.current.value =="" ){
+  return alert("fill all the field ....")
+}
+else{
+   mynotenav("/mynotes")
+return setdata([{title:titleref.current.value,
+ note:noteref.current.value,tag:tagref.current.value,date:today,color:bgfunction()},...data
+
+])
+
+}
+ 
+
+}
+
+
+const deletedata = (i)=>{
+  const update =data.filter((_,idx)=>idx !=i)
+ return setdata(update);
+}
+
+
+
     return(
-<Contexts.Provider value={{navmenu,setnavmenu,controlnav,helpdetail,sethelpdetail,controlhelp,article,faqdata,faqdetail,faqdetail,controlfaq,iswidth,createnotes}}>
+<Contexts.Provider value={{navmenu,setnavmenu,controlnav,helpdetail,sethelpdetail,controlhelp,article,faqdata,faqdetail,faqdetail,controlfaq,iswidth,createnotes,titleref,noteref,tagref,cnclhandler ,data,savehandler,deletedata}}>
     {props.children}
 </Contexts.Provider>
 
