@@ -4,7 +4,7 @@ function Createtitle ({white ="Create",grad="Notes"}){
         <span className="text-white text-5xl">
             {white}
         </span>
-        <span className="font-darkmode  text-6xl  bg-gradient-to-r from-red-700 to-blue-300 bg-clip-text text-transparent">{grad}</span>
+        <span className="font-darkmode  text-6xl  bg-linear-to-r from-red-700 to-blue-300 bg-clip-text text-transparent">{grad}</span>
         </div>
     )
 }

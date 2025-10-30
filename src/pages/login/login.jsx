@@ -13,7 +13,7 @@ const {user,email,password,urlimg,clickimg,geturl,savelog,show} = useContext(Con
     <div  className={`bg-gray-900 absolute  h-screen inset-0 z-60 flex flex-col justify-center items-center   ${show?"hidden":"block"} `}>
       <span className=" text-[96px] sm:text-[150px] cursor-pointer tracking-wider font-darkmode text-white">
         Note
-        <span className="bg-gradient-to-r from-blue-300 to-red-700 bg-clip-text text-transparent">
+        <span className="bg-linear-to-r from-blue-300 to-red-700 bg-clip-text text-transparent">
           Sphere
         </span>
       </span>
@@ -32,7 +32,7 @@ const {user,email,password,urlimg,clickimg,geturl,savelog,show} = useContext(Con
 
 
         <div type="button" onClick={clickimg} className="flex justify-center items-center active:scale-90 cursor-pointer
-        py-4 px-3 gap-2 text-2xl border-2 border-rose-200 bg-gradient-to-r from-blue-300 to-red-700 bg-clip-text text-transparent  rounded-2xl">
+        py-4 px-3 gap-2 text-2xl border-2 border-rose-200 bg-linear-to-r from-blue-300 to-red-700 bg-clip-text text-transparent  rounded-2xl">
             Add your Pic here  <CirclePlus color="#ffffff" /> 
             <input type="file" className="hidden" ref={urlimg} onChange={(e)=>{geturl(e)}}  />
             </div>
