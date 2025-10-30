@@ -1,8 +1,7 @@
-function Para(){
+function Para({ pt="pt-82 not-sm:pt-20", cnt="Transform your Ideas into Visual masterpieces with  our intuitive note-taking experience"}){
     return(
-        <div className="text-rose-100 text-2xl flex not-sm:text-xl flex-1 not-sm:pt-20 pt-82">
-            <p>Transform your Ideas into Visual masterpieces 
-                with  our intuitive note-taking experience
+        <div className={`text-rose-100 text-2xl flex not-sm:text-xl flex-1  ${pt} `}>
+            <p>{cnt}
             </p>
         </div>
     )

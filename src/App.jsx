@@ -4,7 +4,7 @@ import { Routes ,Route } from 'react-router-dom'
 import './App.css'
 import Nav from "./components/navbar/nav.jsx"
 
-
+import Login from "./pages/login/login.jsx"
 import Home from "./pages/homepage/homepage.jsx"
 import Createnote from "./pages/createnote/create.jsx"
 import Mynotes from "./pages/mynotes/mynotes.jsx"
@@ -15,9 +15,11 @@ function App() {
 
 
   return (
-<div className="flex h-screen overflow-hidden">
+<div className="flex  h-screen overflow-hidden">
   {/* Sidebar */}
   <Nav />
+<Login />
+  
 
   {/* Main content area */}
   <main className="flex-1 overflow-y-auto pl-[110px] not-sm:pl-[86.5px] bg-gray-900">
@@ -30,6 +32,7 @@ function App() {
        <Route path="/:id" element={<Home />} />
     </Routes>
   </main>
+ 
 </div>
 
 

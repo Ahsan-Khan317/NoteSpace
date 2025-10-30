@@ -6,11 +6,12 @@ import { useContext } from "react"
 import { Contexts } from "../../contextdata/contextdata.jsx"
 
 function Nav(){
-    const {navmenu,controlnav}=useContext(Contexts)
+    const {navmenu,controlnav,clear}=useContext(Contexts)
     return(
 
 
-     <aside className={`h-screen shadow-xl  shadow-gray-700  bg-gradient-to-tr from-red-300 to-pink-200 fixed left-0 z-50 flex flex-col  max-w-72 p-3 not-sm:py-3 not-sm:px-0 
+     <aside className={`h-screen shadow-xl shadow-gray-700  bg-gradient-to-tr from-red-300
+       to-pink-200 fixed left-0 z-50 flex flex-col  max-w-72 p-3 not-sm:py-3 not-sm:px-0 sm:pb-10
      w-fit transition-all ease-in-out duration-1000 overflow-y-hidden ${navmenu?"items-center":null} `}> 
 
 <div className="flex justify-center   items-center w-fit gap-3 ">
@@ -23,8 +24,11 @@ function Nav(){
       </div>
       
   <Linking />
- <span className={`rotate-270 absolute bottom-56 text-7xl sm:text-6xl sm:bottom-52 cursor-pointer tracking-wider font-darkmode ${navmenu?"opacity-100":"hidden"} `}>Note<span className={` bg-gradient-to-r from-blue-300 to-red-700 bg-clip-text text-transparent`}>Sphere</span></span>
 
+
+
+ 
+<button onClick={clear}  className="text-white font-bold bg-gradient-to-r from-blue-300 to-red-700  w-16 m-auto py-1 mb-3 rounded-2xl cursor-pointer active:scale-95">logout</button>
 
       <Profile />
       

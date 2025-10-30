@@ -186,10 +186,107 @@ const deletedata = (i)=>{
  return setdata(update);
 }
 
+///login section 
+
+const [islogin,setislogin]=useState(()=>{
+        const data = JSON.parse(localStorage.getItem("log"))
+       return data? data:[]}
+)
+const clear =()=>{
+  localStorage.removeItem("log");
+    setislogin([]);
+  setpreview("");
+  setshow(false);
+}
+
+const [show,setshow]=useState(null)
+useEffect(()=>{
+const data = JSON.stringify(islogin);
+localStorage.setItem("log",data);
+if(islogin.length === 0){
+setshow(false)
+}
+else{
+  setshow(true)
+}
+
+},[islogin])
+
+
+
+
+
+
+const user =useRef();
+const password = useRef()
+const email = useRef()
+const urlimg = useRef()
+
+const [preview, setpreview] = useState(() => {
+  const saved = JSON.parse(localStorage.getItem("log"));
+  return saved && saved.length > 0 ? saved[saved.length - 1].url : "";
+});
+
+ 
+const savelog =()=>{
+
+   const person = {
+  users : user.current.value,
+  pass : password.current.value,
+  url:preview || "",
+  gmail:email.current.value
+}
+if(user.current.value == "" || password.current.value == "" ||email.current.value == "" 
+  ||preview == "" ){
+    alert("fill all the input to login")
+    return 
+  }
+
+
+else{
+
+  setislogin([...islogin,person])
+ 
+  user.current.value =""
+  password.current.value=""
+
+  email.current.value=""
+
+
+
+}
+
+
+}
+
+
+
+
+
+
+const clickimg =()=>{
+    urlimg.current.click();
+}
+
+const geturl = (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setpreview(reader.result); // ✅ Base64 string (persistent)
+    };
+    reader.readAsDataURL(file);
+  }
+};
+
+
+
+
+
 
 
     return(
-<Contexts.Provider value={{navmenu,setnavmenu,controlnav,helpdetail,sethelpdetail,controlhelp,article,faqdata,faqdetail,faqdetail,controlfaq,iswidth,createnotes,titleref,noteref,tagref,cnclhandler ,data,savehandler,deletedata}}>
+<Contexts.Provider value={{navmenu,setnavmenu,controlnav,helpdetail,sethelpdetail,controlhelp,article,faqdata,faqdetail,controlfaq,iswidth,createnotes,titleref,noteref,tagref,cnclhandler ,data,savehandler,deletedata,user,password,email,urlimg,clickimg,geturl,savelog,show,preview,clear,islogin}}>
     {props.children}
 </Contexts.Provider>
 
